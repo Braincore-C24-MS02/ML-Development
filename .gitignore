@@ -1,1 +1,3 @@
 /dataset/frames/*
+.venv
+dataset/*
