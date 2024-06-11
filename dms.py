@@ -6,6 +6,7 @@ from imutils import face_utils
 from scipy.spatial import distance
 from ultralytics import YOLO
 import time
+import requests
 
 # Define eye aspect ratio formula
 def calculate_EAR(eye):
@@ -37,8 +38,13 @@ predict = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 model_path = 'best.pt'
 model = YOLO(model_path)
 
-# Open the video capture
-cap = cv2.VideoCapture(0)
+# # Open the video capture
+# cap = cv2.VideoCapture(0)
+
+url = r'http://34.34.218.86:5000'
+cap = cv2.VideoCapture(url)
+
+# Create requests to open the stream from URL
 
 # Initialize variables for accumulating results
 ear_list = []
