@@ -84,13 +84,13 @@ while True:
             leftEyeHull = cv2.convexHull(leftEye)
             rightEyeHull = cv2.convexHull(rightEye)
             mouthHull = cv2.convexHull(mouth)
-            cv2.drawContours(frame, [leftEyeHull], -1, (0, 255, 0), 1)
-            cv2.drawContours(frame, [rightEyeHull], -1, (0, 255, 0), 1)
-            cv2.drawContours(frame, [mouthHull], -1, (0, 255, 0), 1)
+            # cv2.drawContours(frame, [leftEyeHull], -1, (0, 255, 0), 1)
+            # cv2.drawContours(frame, [rightEyeHull], -1, (0, 255, 0), 1)
+            # cv2.drawContours(frame, [mouthHull], -1, (0, 255, 0), 1)
 
-            cv2.putText(frame, f'Left EAR: {leftEAR:.2f}', (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2, cv2.LINE_AA)
-            cv2.putText(frame, f'Right EAR: {rightEAR:.2f}', (20, 75), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2, cv2.LINE_AA)
-            cv2.putText(frame, f'MAR: {mar:.2f}', (20, 100), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (128, 128, 0), 2, cv2.LINE_AA)
+            # cv2.putText(frame, f'Left EAR: {leftEAR:.2f}', (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2, cv2.LINE_AA)
+            # cv2.putText(frame, f'Right EAR: {rightEAR:.2f}', (20, 75), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2, cv2.LINE_AA)
+            # cv2.putText(frame, f'MAR: {mar:.2f}', (20, 100), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (128, 128, 0), 2, cv2.LINE_AA)
 
             if ear < thresh_ear:
                 ear_list.append(ear)
@@ -170,12 +170,12 @@ while True:
             object_detected_list.clear()
             start_time = time.time()
 
-        cv2.imshow("Frame", frame)
+        # cv2.imshow("Frame", frame)
         key = cv2.waitKey(1) & 0xFF
         if key == ord("q"):
             break
     except Exception as e:
         print(f"Error: {e}")
 
-cv2.destroyAllWindows()
+# cv2.destroyAllWindows()
 cap.release()
